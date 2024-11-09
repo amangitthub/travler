@@ -1,0 +1,41 @@
+RewriteEngine on
+#ErrorDocument 404 http://thestylesafari.in/travler/not_found
+
+#file name change
+RewriteRule ^home index.php
+
+# blog remove id
+RewriteRule ^blog/([0-9]+)$ blog.php?id=$1 [NC,L]
+
+# tour book remove id
+RewriteRule ^tour_book/([0-9]+)$ tour_book.php?id=$1 [NC,L]
+
+# blog comment remove id
+RewriteRule ^blog_comment_view/([0-9]+)$ blog_comment_view.php?id=$1 [NC,L]
+
+# login user remove id
+RewriteRule ^loginuser/([0-9]+)$ loginuser.php?id=$1 [NC,L]
+
+
+# checkout remove id
+RewriteRule ^checkout/([0-9]+)$ checkout.php?id=$1 [NC,L]
+
+
+# destination name remove 
+RewriteRule ^destination_tours/([a-zA-Z]+)$ destination_tours.php?destination_name=$2 [NC,L]
+
+
+
+
+
+
+
+
+# all .php remove 
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+
